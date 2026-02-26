@@ -3,13 +3,10 @@
     "version": "1.0.0",
     "description": "Root configuration for WellSense Task",
     "scripts": {
+        "start": "cd backend && npm start",
+        "build": "npm install && cd backend && npm install && cd ../frontend && npm install && npm run build",
         "dev": "cd backend && npm run dev",
-        "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
-        "install-frontend": "cd frontend && npm install",
-        "install-backend": "cd backend && npm install",
-        "build-frontend": "cd frontend && npm run build",
-        "start-backend": "cd backend && npm start",
-        "start": "cd backend && npm start"
+        "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
     },
     "author": "",
     "license": "ISC"
