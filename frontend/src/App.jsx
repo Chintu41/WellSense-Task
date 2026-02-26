@@ -34,7 +34,7 @@ const PageLoader = () => (
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/WellSense-Task">
         <ScrollToTop />
         <div className="min-h-screen bg-white">
           <Navbar />
