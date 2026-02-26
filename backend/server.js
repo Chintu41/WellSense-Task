@@ -53,6 +53,26 @@ app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK', message: 'Wellsense backend API is running' });
 });
 
+// 404 error handler for undefined routes
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        error: 'NOT_FOUND',
+        message: `The requested endpoint ${req.method} ${req.path} does not exist`,
+        code: 'NOT_FOUND'
+    });
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error('Error:', err);
+    res.status(err.status || 500).json({
+        success: false,
+        error: err.message || 'Internal server error',
+        code: err.code || 'INTERNAL_ERROR'
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
