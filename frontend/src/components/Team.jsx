@@ -62,7 +62,7 @@ const Team = () => {
                             whileHover={{ y: -10 }}
                             className="group"
                         >
-                            <div className="relative mb-8 rounded-[3rem] overflow-hidden aspect-[4/5] shadow-[0_20px_40px_-15px_rgba(16,185,129,0.1)] group-hover:shadow-[0_40px_60px_-15px_rgba(16,185,129,0.2)] transition-all duration-500">
+                            <div className="relative mb-8 rounded-[3rem] overflow-hidden aspect-[4/5] shadow-[0_20px_40px_-15px_rgba(212,142,92,0.1)] group-hover:shadow-[0_40px_60px_-15px_rgba(212,142,92,0.2)] transition-all duration-500">
                                 <img
                                     src={member.image}
                                     alt={member.name}

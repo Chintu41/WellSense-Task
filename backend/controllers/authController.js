@@ -31,7 +31,6 @@ exports.register = async (req, res, next) => {
 exports.login = async (req, res, next) => {
     try {
         const { email, password } = req.body;
-
         // Validate email & password
         if (!email || !password) {
             return res.status(400).json({
@@ -68,14 +67,12 @@ exports.login = async (req, res, next) => {
         });
     }
 };
-
 // Get token from model, create cookie and send response
 const sendTokenResponse = (user, statusCode, res) => {
     // Create token
     const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
         expiresIn: '7d'
     });
-
     res.status(statusCode).json({
         success: true,
         token,

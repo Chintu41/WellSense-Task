@@ -12,10 +12,10 @@ const Hero = () => {
     ];
 
     return (
-        <div className="relative overflow-hidden bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 pt-24 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 min-h-screen flex items-center">
+        <div className="relative overflow-hidden bg-gradient-to-b from-accent-100/50 via-accent-50 to-slate-50 pt-24 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 min-h-screen flex items-center">
             {/* dynamic gradient backgrounds */}
             <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/4 pointer-events-none opacity-40">
-                <div className="w-[800px] h-[800px] bg-gradient-to-br from-emerald-100 via-emerald-50 to-transparent rounded-full blur-[100px] animate-pulse-slow"></div>
+                <div className="w-[800px] h-[800px] bg-gradient-to-br from-accent-100 via-accent-50 to-transparent rounded-full blur-[100px] animate-pulse-slow"></div>
             </div>
             <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 pointer-events-none opacity-40">
                 <div className="w-[600px] h-[600px] bg-gradient-to-tr from-emerald-50 via-emerald-100 to-transparent rounded-full blur-[100px] animate-float-slow"></div>
@@ -59,7 +59,7 @@ const Hero = () => {
 
                         <div className="flex flex-col mb-14">
                             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 mb-5">
-                                <a href="#consultation" className="btn-primary group !px-10 !py-4 text-lg shadow-[0_10px_30px_-10px_rgba(243,146,33,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(243,146,33,0.4)]">
+                                <a href="#consultation" className="btn-primary group !px-10 !py-4 text-lg shadow-[0_10px_30px_-10px_rgba(212,142,92,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(212,142,92,0.4)]">
                                     Start Your Journey
                                     <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
                                 </a>
@@ -138,7 +138,7 @@ const Hero = () => {
                                     transition={{ delay: 1.2 }}
                                     className="absolute bottom-8 -right-4 bg-white p-5 rounded-3xl shadow-2xl flex items-center gap-4 border border-brand-50 max-w-[220px]"
                                 >
-                                    <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 shadow-inner">
+                                    <div className="w-12 h-12 bg-accent-100 rounded-2xl flex items-center justify-center text-accent-600 shadow-inner">
                                         <ShieldCheck className="w-7 h-7" />
                                     </div>
                                     <div>

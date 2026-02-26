@@ -25,7 +25,7 @@ const Trust = () => {
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
                             whileHover={{ y: -12 }}
-                            className="bg-white p-8 rounded-[3rem] text-center border border-emerald-50 shadow-[0_20px_40px_-15px_rgba(16,185,129,0.1)] hover:shadow-[0_40px_60px_-15px_rgba(16,185,129,0.2)] transition-all duration-500 group flex flex-col items-center h-full relative overflow-hidden"
+                            className="bg-white p-8 rounded-[3rem] text-center border border-accent-100 shadow-[0_20px_40px_-15px_rgba(212,142,92,0.1)] hover:shadow-[0_40px_60px_-15px_rgba(212,142,92,0.2)] transition-all duration-500 group flex flex-col items-center h-full relative overflow-hidden"
                         >
                             <div className="w-20 h-20 rounded-3xl flex items-center justify-center mb-8 bg-emerald-50 text-emerald-600 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500 shadow-inner">
                                 <div className="transition-colors duration-500">
