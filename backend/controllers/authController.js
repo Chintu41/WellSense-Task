@@ -15,7 +15,6 @@ exports.register = async (req, res, next) => {
             password,
             role
         });
-
         sendTokenResponse(user, 201, res);
     } catch (err) {
         res.status(400).json({
@@ -38,7 +37,6 @@ exports.login = async (req, res, next) => {
                 message: 'Please provide an email and password'
             });
         }
-
         // Check for user
         const user = await User.findOne({ email }).select('+password');
 

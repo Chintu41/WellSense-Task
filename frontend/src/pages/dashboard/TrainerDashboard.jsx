@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import { Users, Calendar, MessageSquare, LogOut, Shield, Loader2, Search } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 const TrainerDashboard = () => {
     const { user, logout } = useAuth();

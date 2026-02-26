@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 const Consultation = require('./models/Consultation');
 const authRoutes = require('./routes/authRoutes');
@@ -53,14 +54,13 @@ app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK', message: 'Wellsense backend API is running' });
 });
 
-// 404 error handler for undefined routes
-app.use((req, res) => {
-    res.status(404).json({
-        success: false,
-        error: 'NOT_FOUND',
-        message: `The requested endpoint ${req.method} ${req.path} does not exist`,
-        code: 'NOT_FOUND'
-    });
+// Serve frontend static files in production
+const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'dist');
+app.use(express.static(frontendBuildPath));
+
+// Catch-all: serve React app for any non-API route (client-side routing)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendBuildPath, 'index.html'));
 });
 
 // Global error handler

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle, CalendarClock, PhoneOutgoing, UserCircle } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 const ConsultationForm = () => {
     const [formData, setFormData] = useState({
