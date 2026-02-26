@@ -3,6 +3,8 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle, CalendarClock, PhoneOutgoing, UserCircle } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const ConsultationForm = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -37,7 +39,7 @@ const ConsultationForm = () => {
         setStatus('loading');
 
         try {
-            const response = await axios.post('http://localhost:5000/api/consultations', formData);
+            const response = await axios.post(`${API_URL}/api/consultations`, formData);
             if (response.data.success) {
                 setStatus('success');
                 setFormData({
