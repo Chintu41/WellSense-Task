@@ -4,6 +4,8 @@ import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import { Activity, Calendar, FileText, LogOut, User as UserIcon, Loader2 } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const UserDashboard = () => {
     const { user, logout } = useAuth();
     const [healthData, setHealthData] = useState(null);
@@ -12,7 +14,7 @@ const UserDashboard = () => {
     useEffect(() => {
         const fetchHealthStatus = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/auth/user/health-status');
+                const res = await axios.get(`${API_URL}/api/auth/user/health-status`);
                 setHealthData(res.data.data);
             } catch (err) {
                 console.error('Error fetching health status', err);

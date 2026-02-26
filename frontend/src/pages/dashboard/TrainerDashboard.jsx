@@ -4,6 +4,8 @@ import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import { Users, Calendar, MessageSquare, LogOut, Shield, Loader2, Search } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const TrainerDashboard = () => {
     const { user, logout } = useAuth();
     const [trainerData, setTrainerData] = useState(null);
@@ -12,7 +14,7 @@ const TrainerDashboard = () => {
     useEffect(() => {
         const fetchTrainerDashboard = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/auth/trainer/dashboard');
+                const res = await axios.get(`${API_URL}/api/auth/trainer/dashboard`);
                 setTrainerData(res.data.data);
             } catch (err) {
                 console.error('Error fetching trainer dashboard', err);
