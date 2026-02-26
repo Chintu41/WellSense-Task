@@ -59,7 +59,7 @@ const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'dist');
 app.use(express.static(frontendBuildPath));
 
 // Catch-all: serve React app for any non-API route (client-side routing)
-app.get('*', (req, res) => {
+app.get('{*splat}', (req, res) => {
     res.sendFile(path.join(frontendBuildPath, 'index.html'));
 });
 
